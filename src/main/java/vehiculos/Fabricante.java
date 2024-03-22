@@ -4,10 +4,12 @@ import java.util.ArrayList;
 
 public class Fabricante {
 	private String nombre;
-	private País pais;
+	private Pais pais;
 	private static ArrayList<Fabricante> listado = new ArrayList<Fabricante>();
 	
-	public Fabricante() {
+	public Fabricante(String nombre, Pais pais) {
+		this.nombre = nombre;
+		this.pais = pais;
 		listado.add(this);
 	}
 	
@@ -23,7 +25,7 @@ public class Fabricante {
 		return contador;
 	}
 	
-	public static String fabricaMayorVentas() {
+	public static Fabricante fabricaMayorVentas() {
 		Fabricante fabrica_mayor_ventas = listado.get(0);
 		int numero_ocurrencias = contarOcurrencias(fabrica_mayor_ventas, listado);
 		
@@ -34,14 +36,14 @@ public class Fabricante {
 			}
 		}
 		
-		return fabrica_mayor_ventas.getNombre();
+		return fabrica_mayor_ventas;
 	}
 	
-	public País getPais() {
+	public Pais getPais() {
 		return pais;
 	}
 	
-	public void setPais(País pais) {
+	public void setPais(Pais pais) {
 		this.pais = pais;
 	}
 	

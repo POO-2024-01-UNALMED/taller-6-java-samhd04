@@ -2,15 +2,16 @@ package vehiculos;
 
 import java.util.ArrayList;
 
-public class País {
+public class Pais {
 	private String nombre;
-	private static ArrayList<País> listado = new ArrayList<País>();
+	private static ArrayList<Pais> listado = new ArrayList<Pais>();
 	
-	public País() {
+	public Pais(String nombre) {
+		this.nombre = nombre;
 		listado.add(this);
 	}
 	
-	public static int contarOcurrencias(País pais, ArrayList<País> listado) {
+	public static int contarOcurrencias(Pais pais, ArrayList<Pais> listado) {
 		int contador = 0;
 		
 		for(int i = 0; i < listado.size(); i++) {
@@ -22,9 +23,9 @@ public class País {
 		return contador;
 	}
 	
-	public static String paisMasVendedor() {
+	public static Pais paisMasVendedor() {
 		
-		País pais_mas_vendedor = listado.get(0);
+		Pais pais_mas_vendedor = listado.get(0);
 		int numero_ocurrencias = contarOcurrencias(pais_mas_vendedor, listado);
 		
 		for(int i = 0; i < listado.size(); i++) {
@@ -34,7 +35,7 @@ public class País {
 			}
 		}
 		
-		return pais_mas_vendedor.getNombre();
+		return pais_mas_vendedor;
 	}
 
 	public String getNombre() {
@@ -45,11 +46,11 @@ public class País {
 		this.nombre = nombre;
 	}
 	
-	public static ArrayList<País> getListado() {
+	public static ArrayList<Pais> getListado() {
 		return listado;
 	}
 	
-	public static void setListado(ArrayList<País> listado) {
-		País.listado = listado;
+	public static void setListado(ArrayList<Pais> listado) {
+		Pais.listado = listado;
 	}
 }
