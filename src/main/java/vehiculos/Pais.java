@@ -7,7 +7,7 @@ public class Pais {
 	private static ArrayList<Pais> listado = new ArrayList<Pais>();
 	
 	public Pais(String nombre) {
-		this.nombre = nombre;
+		setNombre(nombre);
 		listado.add(this);
 	}
 	

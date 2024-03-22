@@ -8,8 +8,8 @@ public class Fabricante {
 	private static ArrayList<Fabricante> listado = new ArrayList<Fabricante>();
 	
 	public Fabricante(String nombre, Pais pais) {
-		this.nombre = nombre;
-		this.pais = pais;
+		setNombre(nombre);
+		setPais(pais);
 		listado.add(this);
 	}
 	
